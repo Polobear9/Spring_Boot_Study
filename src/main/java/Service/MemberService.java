@@ -26,19 +26,20 @@ public class MemberService {
      * find all members
      */
 
-    public List<Member> findMembers(){
+    public List<Member> findMembers() {
         //not allowed the same user to join.
         return memberRepository.findAll();
     }
 
-    public Optional<Member> findOne(Long memberID){
+    public Optional<Member> findOne(Long memberID) {
         return memberRepository.findById(memberID);
     }
 
     private void validateDuplicateMember(Member member) {
         memberRepository.findByName(member.getName())
                 .ifPresent(m -> {
-                    throw new IllegalStateException("Member " + member.getName() + " is already in repository");});
+                    throw new IllegalStateException("Member " + member.getName() + " is already in repository");
+                });
     }
 
 

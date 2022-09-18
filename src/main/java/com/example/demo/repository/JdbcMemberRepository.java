@@ -6,7 +6,7 @@ import javax.sql.DataSource;
 import java.util.List;
 import java.util.Optional;
 
-public class JdbcMemberRepository implements Member_Repository{
+public class JdbcMemberRepository implements Member_Repository {
 
     private final DataSource dataSource;
 

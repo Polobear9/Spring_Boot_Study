@@ -2,13 +2,28 @@ package Service;
 
 import domain.Member;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import repository.Memory_Member_Repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class MemberServiceTest {
 
-    MemberService memberService = new MemberService();
+    MemberService memberService;
+    Memory_Member_Repository memory_Member_Repository;
+
+
+    @BeforeEach
+    public void beforeEach(){
+        memory_Member_Repository = new Memory_Member_Repository();
+        memberService = new MemberService(memory_Member_Repository);
+
+    }
+    @AfterEach
+    public void afterEach(){
+    }
 
 
     @Test

@@ -9,8 +9,11 @@ import java.util.Optional;
 
 public class MemberService {
 
-    private final Memory_Member_Repository memberRepository = new Memory_Member_Repository();
+    private final Memory_Member_Repository memory_member_repository;
 
+    public MemberService(Memory_Member_Repository memory_member_repository) {
+        this.memory_member_repository = memory_member_repository;
+    }
 
     /**
      * take a members

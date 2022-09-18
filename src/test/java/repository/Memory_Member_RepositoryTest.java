@@ -3,11 +3,6 @@ package repository;
 import Service.MemberService;
 import domain.Member;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.Test;
-
-import java.util.Optional;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class Memory_Member_RepositoryTest {
 

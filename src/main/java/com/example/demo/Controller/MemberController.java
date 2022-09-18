@@ -1,9 +1,11 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Service.MemberService;
+import com.example.demo.domain.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class MemberController {
@@ -16,7 +18,15 @@ public class MemberController {
 
     @GetMapping("/members/new")
     public String createForm() {
-        return "members/createMembersForm";
+        return "members/createMemberForm";
+    }
+    @PostMapping("/Members/new")
+    public String create(MemberForm form){
+        Member member = new Member();
+        member.setName(form.getName());
+
+        memberService.join(member);
+        return "redirect:/";
     }
 
 

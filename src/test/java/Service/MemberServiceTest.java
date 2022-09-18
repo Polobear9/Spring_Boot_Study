@@ -1,11 +1,12 @@
 package Service;
 
-import domain.Member;
+import com.example.demo.Service.MemberService;
+import com.example.demo.domain.Member;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import repository.Memory_Member_Repository;
+import com.example.demo.repository.Memory_Member_Repository;
 
 import static org.junit.jupiter.api.Assertions.*;
 

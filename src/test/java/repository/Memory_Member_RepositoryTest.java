@@ -1,7 +1,8 @@
 package repository;
 
-import Service.MemberService;
-import domain.Member;
+import com.example.demo.Service.MemberService;
+import com.example.demo.domain.Member;
+import com.example.demo.repository.Memory_Member_Repository;
 import org.assertj.core.api.Assertions;
 
 class Memory_Member_RepositoryTest {

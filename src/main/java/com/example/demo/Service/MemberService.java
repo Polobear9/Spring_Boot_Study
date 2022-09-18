@@ -1,10 +1,9 @@
-package Service;
+package com.example.demo.Service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import repository.Member_Repository;
-import repository.Memory_Member_Repository;
-import domain.Member;
+import com.example.demo.repository.Memory_Member_Repository;
+import com.example.demo.domain.Member;
 
 import java.util.List;
 import java.util.Optional;

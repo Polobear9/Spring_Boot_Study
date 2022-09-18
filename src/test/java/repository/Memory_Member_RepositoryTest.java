@@ -11,8 +11,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class Memory_Member_RepositoryTest {
 
+    Memory_Member_Repository memory_member_repository;
 
-    MemberService memberService = new MemberService();
+    MemberService memberService = new MemberService(memory_member_repository);
 
 
     void save() { //save --> join the repository

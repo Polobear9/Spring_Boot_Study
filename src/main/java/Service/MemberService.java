@@ -15,13 +15,14 @@ public class MemberService {
         this.memory_member_repository = memory_member_repository;
     }
 
+
     /**
      * take a members
      */
     public Long join(Member member) {
         validateDuplicateMember(member);
         // if member is already in repository, we throw the Exception.
-        memberRepository.save(member);
+        memory_member_repository.save(member);
         return member.getId();
     }
 
@@ -31,15 +32,15 @@ public class MemberService {
 
     public List<Member> findMembers() {
         //not allowed the same user to join.
-        return memberRepository.findAll();
+        return memory_member_repository.findAll();
     }
 
     public Optional<Member> findOne(Long memberID) {
-        return memberRepository.findById(memberID);
+        return memory_member_repository.findById(memberID);
     }
 
     private void validateDuplicateMember(Member member) {
-        memberRepository.findByName(member.getName())
+        memory_member_repository.findByName(member.getName())
                 .ifPresent(m -> {
                     throw new IllegalStateException("Member " + member.getName() + " is already in repository");
                 });

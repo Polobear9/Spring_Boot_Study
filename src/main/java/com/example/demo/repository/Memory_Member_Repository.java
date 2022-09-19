@@ -1,7 +1,6 @@
 package com.example.demo.repository;
 
 import com.example.demo.domain.Member;
-import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
@@ -29,6 +28,14 @@ public class Memory_Member_Repository implements Member_Repository {
     @Override
     public Optional<Member> findByName(String name) {
         return store.values().stream()
+                .filter(member -> member.getName().equals(name))
+                .findAny();
+    }
+
+    @Override
+    public Optional<Member> findByInfo(Long id, String name) {
+        return store.values().stream()
+                .filter(member -> member.getId().equals(id))
                 .filter(member -> member.getName().equals(name))
                 .findAny();
     }

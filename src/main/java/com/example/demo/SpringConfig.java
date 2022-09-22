@@ -3,6 +3,7 @@ package com.example.demo;
 import com.example.demo.Service.MemberService;
 import com.example.demo.repository.JdbcMemberRepository;
 import com.example.demo.repository.Memory_Member_Repository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -13,6 +14,7 @@ public class SpringConfig {
 
     private DataSource dataSource;
 
+    @Autowired
     public SpringConfig(DataSource dataSource){
         this.dataSource = dataSource;
     }

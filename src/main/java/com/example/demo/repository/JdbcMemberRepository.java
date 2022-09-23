@@ -9,9 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-public class JdbcMemberRepository extends Memory_Member_Repository {
+public class JdbcMemberRepository implements Member_Repository {
 
-    private final DataSource dataSource;
+    private DataSource dataSource;
 
     public JdbcMemberRepository(DataSource dataSource) {
         this.dataSource = dataSource;

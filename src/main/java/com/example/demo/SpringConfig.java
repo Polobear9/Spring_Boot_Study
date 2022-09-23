@@ -2,6 +2,7 @@ package com.example.demo;
 
 import com.example.demo.Service.MemberService;
 import com.example.demo.repository.JdbcMemberRepository;
+import com.example.demo.repository.Member_Repository;
 import com.example.demo.repository.Memory_Member_Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -27,7 +28,7 @@ public class SpringConfig {
     }
 
     @Bean
-    public Memory_Member_Repository memory_member_repository() {
+    public Member_Repository memory_member_repository() {
         return new JdbcMemberRepository(dataSource);
     }
 }

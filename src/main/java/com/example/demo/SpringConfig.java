@@ -1,35 +1,32 @@
 package com.example.demo;
 
 import com.example.demo.Service.MemberService;
-import com.example.demo.repository.JdbcMemberRepository;
-import com.example.demo.repository.JdbcTemplateMemberRepository;
-import com.example.demo.repository.Member_Repository;
-import com.example.demo.repository.Memory_Member_Repository;
+import com.example.demo.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import javax.persistence.EntityManager;
 import javax.sql.DataSource;
 
 @Configuration
 public class SpringConfig {
 
-    private DataSource dataSource;
+    private final Member_Repository memberRepository;
 
     @Autowired
-    public SpringConfig(DataSource dataSource){
-        this.dataSource = dataSource;
+    public SpringConfig(Member_Repository memberRepository) {
+        this.memberRepository = memberRepository;
     }
-
-
 
     @Bean
     public MemberService memberService() {
-        return new MemberService(memory_member_repository());
+        return new MemberService(memberRepository);
     }
 
-    @Bean
+/*    @Bean
     public Member_Repository memory_member_repository() {
-        return new JdbcTemplateMemberRepository(dataSource);
-    }
+        //return new JdbcTemplateMemberRepository(dataSource);
+        return new JpaMemberRepository(entityManager);
+    }*/
 }

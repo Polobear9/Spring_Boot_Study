@@ -6,8 +6,11 @@ import org.springframework.stereotype.Service;
 import com.example.demo.repository.Memory_Member_Repository;
 import com.example.demo.domain.Member;
 
+import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Optional;
+
+@Transactional
 
 public class MemberService {
 

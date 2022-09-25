@@ -4,8 +4,6 @@ import com.example.demo.Service.MemberService;
 import com.example.demo.domain.Member;
 import com.example.demo.repository.Memory_Member_Repository;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -18,8 +16,10 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 @Transactional
 class MemberServiceIntegrationTest {
 
-    @Autowired MemberService memberService;
-    @Autowired Memory_Member_Repository memory_member_repository;
+    @Autowired
+    MemberService memberService;
+    @Autowired
+    Memory_Member_Repository memory_member_repository;
 
     @Test
     void join() {

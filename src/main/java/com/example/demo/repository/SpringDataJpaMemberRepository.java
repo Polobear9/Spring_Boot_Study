@@ -5,7 +5,8 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;
 
-public interface SpringDatajpaMemberRepository extends JpaRepository<Member, Long>, Member_Repository {
+//need to study the Jpa and Spring Data Jpa , Hibernate.
+public interface SpringDataJpaMemberRepository extends JpaRepository<Member, Long>, Member_Repository {
 
     @Override
     Optional<Member> findByName(String name);

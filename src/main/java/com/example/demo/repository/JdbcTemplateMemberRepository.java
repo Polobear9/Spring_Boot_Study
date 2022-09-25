@@ -15,12 +15,12 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
-public class JdbcTemplateMemberRepository implements Member_Repository{
+public class JdbcTemplateMemberRepository implements Member_Repository {
 
     private final JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public JdbcTemplateMemberRepository (DataSource dataSource) {
+    public JdbcTemplateMemberRepository(DataSource dataSource) {
         jdbcTemplate = new JdbcTemplate(dataSource);
     }
 
@@ -39,7 +39,7 @@ public class JdbcTemplateMemberRepository implements Member_Repository{
 
     @Override
     public Optional<Member> findById(Long id) {
-        List<Member> result = jdbcTemplate.query("select *  from member where id = ?", memberRowMapper());
+        List<Member> result = jdbcTemplate.query("select *  from member where id = ?", memberRowMapper(), id);
         return result.stream().findAny();
     }
 
@@ -56,10 +56,10 @@ public class JdbcTemplateMemberRepository implements Member_Repository{
 
     @Override
     public List<Member> findAll() {
-      return jdbcTemplate.query("select * from member", memberRowMapper());
+        return jdbcTemplate.query("select * from member", memberRowMapper());
     }
 
-    private RowMapper<Member> memberRowMapper(){
+    private RowMapper<Member> memberRowMapper() {
         return (rs, rowNum) -> {
             Member member = new Member();
             member.setId(rs.getLong("id"));

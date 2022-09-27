@@ -7,11 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+//need to set the configuration, @configuration is send a info to spring.
 @Configuration
 public class SpringConfig {
 
     private final Member_Repository memberRepository;
 
+    //Dependency injection.
     @Autowired
     public SpringConfig(Member_Repository memberRepository) {
         this.memberRepository = memberRepository;

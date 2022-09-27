@@ -15,6 +15,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
+
+//Use a JdbcTemplate , it's make can be more simple query.
 public class JdbcTemplateMemberRepository implements Member_Repository {
 
     private final JdbcTemplate jdbcTemplate;

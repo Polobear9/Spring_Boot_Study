@@ -6,6 +6,8 @@ import javax.persistence.EntityManager;
 import java.util.List;
 import java.util.Optional;
 
+//JPA statement, JDBC -> JDBC template -> JPA -> SPRING JPA ....
+
 public class JpaMemberRepository implements Member_Repository {
 
     private final EntityManager entityManager;

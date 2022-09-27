@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class TimeTraceAop {
 
+    //AOP code --> check the time for check the time.
     @Around("execution(* com.example.demo..*(..))")
     public Object execute(ProceedingJoinPoint joinPoint) throws Throwable {
         long start = System.currentTimeMillis();
